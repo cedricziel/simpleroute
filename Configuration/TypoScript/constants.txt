@@ -1,0 +1,15 @@
+
+plugin.tx_simpleroute {
+	view {
+		# cat=plugin.tx_simpleroute/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:simpleroute/Resources/Private/Templates/
+		# cat=plugin.tx_simpleroute/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:simpleroute/Resources/Private/Partials/
+		# cat=plugin.tx_simpleroute/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:simpleroute/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_simpleroute//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

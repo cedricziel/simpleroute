@@ -1,0 +1,101 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    199,
+                    102
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "searchForm",
+                        "showDirections"
+                    ]
+                },
+                "name": "Waypoint",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "142575756855"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "240908976932"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Simple Plugin for point-to-point directions. For now, Google Maps only.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": ""
+        },
+        "extensionKey": "simpleroute",
+        "name": "Simple Maps Directions",
+        "originalExtensionKey": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "cedric@cedric-ziel.com",
+                "name": "Cedric Ziel",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Waypoint => searchForm,showDirections",
+                    "noncacheableActions": "Waypoint => showDirections",
+                    "switchableActions": "Complete\nWaypoint->searchForm;Waypoint->showDirections"
+                },
+                "key": "main",
+                "name": "Simpleroute"
+            }
+        ],
+        "vendorName": "CedricZiel"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2015-02-22 06:17",
+        "extension_builder_version": "6.2.0",
+        "be_user": "Cedric Ziel (1)"
+    }
+}

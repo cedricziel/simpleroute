@@ -1,0 +1,49 @@
+
+plugin.tx_simpleroute {
+	view {
+		templateRootPath = {$plugin.tx_simpleroute.view.templateRootPath}
+		partialRootPath = {$plugin.tx_simpleroute.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_simpleroute.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_simpleroute.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_simpleroute._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-simpleroute table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-simpleroute table th {
+		font-weight:bold;
+	}
+
+	.tx-simpleroute table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

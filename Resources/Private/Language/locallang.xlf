@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-22T18:17:37Z" product-name="simpleroute">
+		<header/>
+		<body>
+			<trans-unit id="tx_simpleroute_domain_model_waypoint">
+				<source>Waypoint</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleroute_domain_model_waypoint.title">
+				<source>Title</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
