@@ -27,10 +27,13 @@ namespace CedricZiel\Simpleroute\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use CedricZiel\Simpleroute\Domain\Model\Waypoint;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /**
  * WaypointController
  */
-class WaypointController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class WaypointController extends ActionController {
 
 	/**
 	 * waypointRepository
@@ -46,16 +49,16 @@ class WaypointController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 * @return void
 	 */
 	public function searchFormAction() {
-		
+
 	}
 
 	/**
 	 * action showDirections
 	 *
-	 * @return void
+	 * @param Waypoint $waypoint
 	 */
-	public function showDirectionsAction() {
-		
-	}
+	public function showDirectionsAction(Waypoint $waypoint) {
 
+		$this->view->assign('waypoint', $waypoint);
+	}
 }

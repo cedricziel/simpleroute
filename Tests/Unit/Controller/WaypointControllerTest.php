@@ -1,10 +1,11 @@
 <?php
 namespace CedricZiel\Simpleroute\Tests\Unit\Controller;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2015 Cedric Ziel <cedric@cedric-ziel.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -24,12 +25,15 @@ namespace CedricZiel\Simpleroute\Tests\Unit\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use CedricZiel\Simpleroute\Domain\Model\Waypoint;
+use TYPO3\CMS\Core\Tests\UnitTestCase;
+
 /**
  * Test case for class CedricZiel\Simpleroute\Controller\WaypointController.
  *
  * @author Cedric Ziel <cedric@cedric-ziel.com>
  */
-class WaypointControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class WaypointControllerTest extends UnitTestCase {
 
 	/**
 	 * @var \CedricZiel\Simpleroute\Controller\WaypointController
@@ -37,23 +41,26 @@ class WaypointControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	protected $subject = NULL;
 
 	protected function setUp() {
+
 		$this->subject = $this->getMock('CedricZiel\\Simpleroute\\Controller\\WaypointController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
 	protected function tearDown() {
+
 		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function showActionAssignsTheGivenWaypointToView() {
-		$waypoint = new \CedricZiel\Simpleroute\Domain\Model\Waypoint();
+	public function showDirectionsActionAssignsTheGivenWaypointToView() {
+
+		$waypoint = new Waypoint();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
 		$view->expects($this->once())->method('assign')->with('waypoint', $waypoint);
 
-		$this->subject->showAction($waypoint);
+		$this->subject->showDirectionsAction($waypoint);
 	}
 }
