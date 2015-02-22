@@ -26,6 +26,8 @@ namespace CedricZiel\Simpleroute\Tests\Unit\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Tests\UnitTestCase;
+
 /**
  * Test case for class \CedricZiel\Simpleroute\Domain\Model\Waypoint.
  *
@@ -34,17 +36,20 @@ namespace CedricZiel\Simpleroute\Tests\Unit\Domain\Model;
  *
  * @author Cedric Ziel <cedric@cedric-ziel.com>
  */
-class WaypointTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class WaypointTest extends UnitTestCase {
+
 	/**
 	 * @var \CedricZiel\Simpleroute\Domain\Model\Waypoint
 	 */
 	protected $subject = NULL;
 
 	protected function setUp() {
+
 		$this->subject = new \CedricZiel\Simpleroute\Domain\Model\Waypoint();
 	}
 
 	protected function tearDown() {
+
 		unset($this->subject);
 	}
 
@@ -52,6 +57,7 @@ class WaypointTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function getTitleReturnsInitialValueForString() {
+
 		$this->assertSame(
 			'',
 			$this->subject->getTitle()
@@ -62,6 +68,7 @@ class WaypointTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function setTitleForStringSetsTitle() {
+
 		$this->subject->setTitle('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
