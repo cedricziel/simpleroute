@@ -1,9 +1,10 @@
 <f:layout name="Default"/>
 
 <f:section name="main">
-	<f:form action="showDirectionsAction">
+	<f:form action="showDirectionsAction" pageUid="{settings.targetPid}" object="{search}"
+			objectName="search">
 		<label for="start">Start</label>
-		<f:form.textfield property="start" />
+		<f:form.textfield id="start" property="start"/>
 		<f:form.submit value="Absenden"/>
 	</f:form>
 </f:section>
