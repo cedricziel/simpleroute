@@ -25,5 +25,18 @@
     "squizlabs/php_codesniffer": "~2.0.0",
     "theseer/phpdox": "0.7.0",
     "fluidtypo3/coding-standards": "dev-master"
-  }
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "typo3/cms",
+        "version": "6.2.9",
+        "dist": {
+          "url": "https://github.com/TYPO3/TYPO3.CMS/archive/6.2.9.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ]
 }
