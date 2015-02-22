@@ -5,7 +5,7 @@
   "version": "0.1",
   "autoload": {
     "psr-4": {
-      "CedricZiel\\QaSkel\\": "Classes/"
+      "CedricZiel\\Simpleroute\\": "Classes/"
     },
     "classmap": [
       "Tests/",
