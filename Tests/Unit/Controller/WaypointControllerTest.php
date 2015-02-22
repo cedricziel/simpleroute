@@ -58,6 +58,7 @@ class WaypointControllerTest extends UnitTestCase {
 		$waypoint = new Waypoint();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+
 		$this->inject($this->subject, 'view', $view);
 		$view->expects($this->once())->method('assign')->with('waypoint', $waypoint);
 

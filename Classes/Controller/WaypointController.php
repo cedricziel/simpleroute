@@ -28,6 +28,7 @@ namespace CedricZiel\Simpleroute\Controller;
  ***************************************************************/
 
 use CedricZiel\Simpleroute\Domain\Model\Waypoint;
+use CedricZiel\Simpleroute\Domain\Repository\WaypointRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -39,9 +40,16 @@ class WaypointController extends ActionController {
 	 * waypointRepository
 	 *
 	 * @var \CedricZiel\Simpleroute\Domain\Repository\WaypointRepository
-	 * @inject
 	 */
 	protected $waypointRepository = NULL;
+
+	/**
+	 * @param WaypointRepository $waypointRepository
+	 */
+	public function __construct(WaypointRepository $waypointRepository = NULL) {
+
+		$this->waypointRepository = $waypointRepository;
+	}
 
 	/**
 	 * action searchForm
