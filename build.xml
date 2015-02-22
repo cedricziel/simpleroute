@@ -126,7 +126,7 @@
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="${basedir}/vendor/bin/phpunit">
+        <exec executable="${basedir}/vendor/bin/phpunit" failonerror="true">
             <arg line="-c ${basedir}/phpunit.xml.dist"/>
         </exec>
     </target>
