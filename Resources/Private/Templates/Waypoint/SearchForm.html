@@ -1,6 +1,9 @@
 <f:layout name="Default"/>
 
 <f:section name="main">
+
+	<f:flashMessages renderMode="div" />
+
 	<f:form action="showDirectionsAction" pageUid="{settings.targetPid}" object="{search}"
 			objectName="search">
 		<label for="start">Start</label>
