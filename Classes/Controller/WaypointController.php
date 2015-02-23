@@ -54,11 +54,14 @@ class WaypointController extends ActionController {
 	/**
 	 * action searchForm
 	 *
-	 * @return void
+	 * @param \CedricZiel\Simpleroute\Domain\Model\DTO\DirectionSearchDTO $directionSearch
 	 */
-	public function searchFormAction() {
+	public function searchFormAction(DirectionSearchDTO $directionSearch = NULL) {
 
-		$directionSearch = new DirectionSearchDTO();
+		if (NULL === $directionSearch) {
+			$directionSearch = new DirectionSearchDTO();
+		}
+
 		$this->view->assign('search', $directionSearch);
 	}
 
