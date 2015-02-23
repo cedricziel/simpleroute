@@ -39,7 +39,7 @@ class DirectionSearchDTO extends AbstractEntity {
 	/**
 	 * @var string
 	 */
-	protected $start;
+	protected $start = '';
 
 	/**
 	 * @return string

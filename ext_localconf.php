@@ -8,11 +8,9 @@ if (!defined('TYPO3_MODE')) {
 	'Main',
 	array(
 		'Waypoint' => 'searchForm, showDirections',
-		
 	),
 	// non-cacheable actions
 	array(
 		'Waypoint' => 'showDirections',
-		
 	)
 );

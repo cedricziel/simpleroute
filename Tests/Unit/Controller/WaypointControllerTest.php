@@ -25,7 +25,7 @@ namespace CedricZiel\Simpleroute\Tests\Unit\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use CedricZiel\Simpleroute\Domain\Model\Waypoint;
+use CedricZiel\Simpleroute\Domain\Model\DTO\DirectionSearchDTO;
 use TYPO3\CMS\Core\Tests\UnitTestCase;
 
 /**
@@ -55,13 +55,23 @@ class WaypointControllerTest extends UnitTestCase {
 	 */
 	public function showDirectionsActionAssignsTheGivenWaypointToView() {
 
-		$waypoint = new Waypoint();
-
+		$searchDto = new DirectionSearchDTO();
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 
 		$this->inject($this->subject, 'view', $view);
-		$view->expects($this->once())->method('assign')->with('waypoint', $waypoint);
+		$view->expects($this->once())->method('assign')->with('search', $searchDto);
 
-		$this->subject->showDirectionsAction($waypoint);
+		$this->subject->showDirectionsAction($searchDto);
+	}
+
+	/**
+	 * @test
+	 */
+	public function searchFormActionAssignsAMinimalSearchDTO() {
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->withAnyParameters();
+		$this->subject->searchFormAction();
 	}
 }

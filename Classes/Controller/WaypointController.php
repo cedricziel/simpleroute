@@ -27,7 +27,7 @@ namespace CedricZiel\Simpleroute\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use CedricZiel\Simpleroute\Domain\Model\Waypoint;
+use CedricZiel\Simpleroute\Domain\Model\DTO\DirectionSearchDTO;
 use CedricZiel\Simpleroute\Domain\Repository\WaypointRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -54,19 +54,23 @@ class WaypointController extends ActionController {
 	/**
 	 * action searchForm
 	 *
-	 * @return void
+	 * @param \CedricZiel\Simpleroute\Domain\Model\DTO\DirectionSearchDTO $directionSearch
 	 */
-	public function searchFormAction() {
+	public function searchFormAction(DirectionSearchDTO $directionSearch = NULL) {
 
+		if (NULL === $directionSearch) {
+			$directionSearch = new DirectionSearchDTO();
+		}
+
+		$this->view->assign('search', $directionSearch);
 	}
 
 	/**
 	 * action showDirections
-	 *
-	 * @param Waypoint $waypoint
+	 * @param DirectionSearchDTO $directionSearch
 	 */
-	public function showDirectionsAction(Waypoint $waypoint) {
+	public function showDirectionsAction(DirectionSearchDTO $directionSearch) {
 
-		$this->view->assign('waypoint', $waypoint);
+		$this->view->assign('search', $directionSearch);
 	}
 }
